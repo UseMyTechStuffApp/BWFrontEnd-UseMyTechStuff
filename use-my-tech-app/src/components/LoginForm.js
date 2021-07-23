@@ -21,9 +21,8 @@ function LoginForm({ Login, error }) {
         <div className='page-div'>
         <form onSubmit={submitHandler}>
             <div className='form-inner'>
-                {/* <h1>Use My Tech Stuff</h1> */}
                 <h2>Login</h2>
-                {(error !=='') ? ( <div className='error'>{error}</div> ) : ''}
+                {(error !=='') ? ( <div className='error' style={{ color:'red' }}>{error}</div> ) : ''}
                 <div className='form-group'>
                     <label htmlFor='username' placeholder='Username or Email'>Username:</label>
                     <input type='username' name='username' id='username' onChange={e => setDetails({...details, username: e.target.value})} value={details.username}/>

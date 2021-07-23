@@ -21,7 +21,6 @@ input, button {
 }
 h1 {
   margin-bottom: 35%;
-  /* margin-left: 10%; */
   font-size: 3rem;
   z-index: 2;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -37,7 +36,6 @@ img {
 }
 
 form{
-  /* display: block; */
   position: relative;
 }
 
