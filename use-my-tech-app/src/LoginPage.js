@@ -124,7 +124,7 @@ function LoginPage() {
 						type="checkbox"
 						name="terms"
 						checked={formState.terms}
-						id="confirm"
+						id="confirms"
 						onChange={onChangeHandle}
 					/>
 						
