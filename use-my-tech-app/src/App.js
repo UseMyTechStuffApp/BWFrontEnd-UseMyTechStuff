@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './App.css';
 import LoginForm from './LoginForm';
+import SignUpPage from './SignUpPage'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
   const adminUser = {
@@ -29,9 +31,22 @@ function App() {
 
 
   return (
+    <Router>
     <div className="App">
-     <LoginForm Login={Login} error={error}/>
+
+      <header className="App-header">
+      <Switch>
+        <Route exact path='/'>
+          <LoginForm Login={Login} error={error}/>
+        </Route>
+        <Route exact path='/signup'>
+          <SignUpPage />
+        </Route>
+      </Switch>
+      </header>
+      
     </div>
+    </Router>
   );
 }
 
