@@ -12,7 +12,7 @@ function SignUpPage() {
 		terms: ''
 	})
 
-	//error holder and displayer
+	//error holder and display
 	const [errors, setErrors] = useState({
 		name: '',
 		email: '',
@@ -124,7 +124,7 @@ function SignUpPage() {
 						type="checkbox"
 						name="terms"
 						checked={formState.terms}
-						id="confirm"
+						id="confirms"
 						onChange={onChangeHandle}
 					/>
 						

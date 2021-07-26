@@ -3,7 +3,6 @@ import './App.css';
 import LoginForm from './LoginForm';
 import SignUpPage from './SignUpPage'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import AddItem from './AddItem'
 
 function App() {
   const adminUser = {
@@ -17,7 +16,7 @@ function App() {
   const Login = details => {
     console.log(details);
 
-    if (details.username === adminUser.username && details.password === adminUser.password){
+    if (details.username == adminUser.username && details.password == adminUser.password){
     return setUser({
         username: details.username,
       });
@@ -26,7 +25,9 @@ function App() {
     }
   }
 
-  
+  const Logout = () => {
+    console.log('Logout');
+  }
 
 
   return (
@@ -40,9 +41,6 @@ function App() {
         </Route>
         <Route exact path='/signup'>
           <SignUpPage />
-        </Route>
-        <Route exact path='/addItem'>
-          <AddItem />
         </Route>
       </Switch>
       </header>

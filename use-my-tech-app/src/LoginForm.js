@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 function LoginForm({ Login, error }) {
+    //initial login form
     const [details, setDetails] = useState({
         username: '',
         password:''
@@ -13,6 +14,7 @@ function LoginForm({ Login, error }) {
 
         Login(details)
     }
+    //error styles
     const errorStyle = {
         fontSize: 16,
         color: 'red',
