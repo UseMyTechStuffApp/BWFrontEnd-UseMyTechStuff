@@ -1,7 +1,7 @@
 // import ItemList from './components/ItemList';
 
 import './App.css';
-import LoginPage from './LoginPage';
+import LoginPage from './components/LoginPage';
 
 function App() {
   return (
