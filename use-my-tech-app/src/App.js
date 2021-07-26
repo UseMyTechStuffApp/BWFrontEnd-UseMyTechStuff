@@ -1,6 +1,10 @@
+
 import React, { useState } from 'react'
 import './App.css';
 import LoginForm from './components/LoginForm';
+import LoginPage from './LoginPage'
+import AddItem from './AddItem'
+
 
 function App() {
   const adminUser = {
@@ -31,6 +35,10 @@ function App() {
   return (
     <div className="App">
      <LoginForm Login={Login} error={error}/>
+      <header className="App-header">
+        <LoginPage />
+        <AddItem />
+      </header>
     </div>
   );
 }
