@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import * as yup from 'yup'
+import React, { useState, useEffect } from 'react';
+import * as yup from 'yup';
+import { formSchema } from './FormSchema';
+import { useHistory } from 'react-router-dom';
+import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 
 function LoginPage() {
@@ -39,15 +42,7 @@ function LoginPage() {
 	//disables button until form is complete
 	const [buttonDisabled, setButtonDisabled] = useState(true)
 
-
-	//form schema
-	const formSchema = yup.object().shape({
-		name: yup.string().required('Please fill out this field'),
-		email: yup.string().email('must be a valid email').required(),
-		password: yup.string().required(),
-		confirm: yup.string().oneOf([yup.ref("password"), null], "Passwords must match"),
-		terms: yup.boolean().oneOf([true], "Please agree to the terms").required()
-	})
+	//form schema moved from LoginPage into separate file
 
 	//useEffect to hold schema and validate form
 	useEffect(() => {
