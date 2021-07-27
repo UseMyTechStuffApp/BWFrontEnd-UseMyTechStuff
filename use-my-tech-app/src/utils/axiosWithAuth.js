@@ -4,7 +4,7 @@ export const axiosWithAuth = () => {
  const token = localStorage.getItem('token')
 
  return axios.create({
-     baseURL: 'http://fakestoreapi.com/products',
+     baseURL: 'http://localhost:5000',
      headers: {
          'Content-Type': 'application/json',
          Authoriaztion: `${token}`

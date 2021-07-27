@@ -73,7 +73,7 @@ function LoginPage() {
 	}
 
 	return (
-		<div>
+		<div className='login'>
 			<form onSubmit={formSubmit}>
 				<label htmlFor="name"> Name:
 					<input
