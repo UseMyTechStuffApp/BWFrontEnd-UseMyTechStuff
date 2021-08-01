@@ -1,51 +1,31 @@
-import React, { useState } from 'react'
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import ItemList from './components/ItemList';
 import './App.css';
-import LoginForm from './components/LoginForm';
-import SignUpPage from './SignUpPage'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import AddItem from './AddItem'
+import LoginPage from './components/LoginPage';
+import SignUp from './components/SignUp';
+import PrivateRoute from './components/PrivateRoute'
+import NavBar from './components/NavBar';
 
 function App() {
-  const adminUser = {
-    username: 'admin',
-    password: 'admin123'
-  }
 
-  const [user, setUser] = useState({username:''})
-  const [error, setError] = useState('');
-
-  const Login = details => {
-    console.log(details);
-
-    if (details.username === adminUser.username && details.password === adminUser.password){
-    return setUser({
-        username: details.username,
-      });
-    }else {
-      setError('Username or password is incorrect')
-    }
-  }
-
-  
 
 
   return (
     <Router>
     <div className="App">
-      <header className="App-header">
-      <Switch>
-        <Route exact path='/'>
-          <LoginForm Login={Login} error={error}/>
-        </Route>
-        <Route exact path='/signup'>
-          <SignUpPage />
-        </Route>
-        <Route exact path='/addItem'>
-          <AddItem />
-        </Route>
-      </Switch>
-      </header>
-      
+    <Router>
+     <header className="App-header">
+        <h1>Use My Tech Stuff</h1>
+        <NavBar/>
+      </header>     
+    
+    <Switch> 
+      <Route exact path='/' component={LoginPage}/>
+      <Route path='/signup' component={SignUp}/>
+      <PrivateRoute path='/itemList' component={ItemList}/>
+    </Switch>
+    </Router>
     </div>
     </Router>
   );
