@@ -8,7 +8,11 @@ import PrivateRoute from './components/PrivateRoute'
 import NavBar from './components/NavBar';
 
 function App() {
+
+
+
   return (
+    <Router>
     <div className="App">
     <Router>
      <header className="App-header">
@@ -23,6 +27,7 @@ function App() {
     </Switch>
     </Router>
     </div>
+    </Router>
   );
 }
 
